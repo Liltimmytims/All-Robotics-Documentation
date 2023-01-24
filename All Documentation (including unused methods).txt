@@ -1,43 +1,46 @@
-//All Documentation (including unused methods)
+////////////////////////////////////////[All Documentation]////////////////////////////////////////
+//Jimmy Souilliere
+//This copy includes currently unused methods
 
 
-/////TO DO
-//import edu.wpi.first.wpilibj.Encoder;
-//import edu.wpi.first.wpilibj.PWM;
+//////////TO DO
+
+//////////WORK IN PROGRESS
 //import edu.wpi.first.wpilibj.BuiltInAccelerometer;
 
-/////DONE
+//////////DONE
 //import edu.wpi.first.wpilibj.TimedRobot;
 //import edu.wpi.first.wpilibj.CounterBase.EncodingType;
 //import edu.wpi.first.wpilibj.interfaces.Accelerometer;
 //import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 //import edu.wpi.first.wpilibj.AnalogInput;
-
+//import edu.wpi.first.wpilibj.Encoder;
 //import edu.wpi.first.wpilibj.Joystick;
+//import edu.wpi.first.wpilibj.PWM;
 
 
 
-////////////////////[TITLE]////////////////////
+////////////////////////////////////////[TITLE]////////////////////////////////////////
 
-/////Import
-//
+//////////Import
 
-/////Constructor
+//////////Constructor
 
-/////Methods
+//////////Methods
 
-///Used:
+/////Used:
 
-///Unused:
-
+/////Unused:
 
 
-////////////////////Timed Robot////////////////////
 
-/////Import
+////////////////////////////////////////Timed Robot////////////////////////////////////////
+
+//////////Import
+
 //import edu.wpi.first.wpilibj.TimedRobot;
 
-/////Constructor
+//////////Constructor
 
 //protected TimedRobot()
 //Constructor for TimedRobot.
@@ -46,11 +49,11 @@
 //Constructor for TimedRobot.
 //period - Period in seconds.
 
-/////Methods
+//////////Methods
 
-///Used:
+/////Used:
 
-///Unused:
+/////Unused:
 
 //public void close()
 //Specified by: close in interface AutoCloseable
@@ -79,16 +82,19 @@
 
 
 
-////////////////////Encoding Type////////////////////
+////////////////////////////////////////Encoding Type////////////////////////////////////////
 
-/////Import
+//////////Import
+
 //import edu.wpi.first.wpilibj.CounterBase.EncodingType;
 
-/////Methods
+//////////Constructor
 
-///Used:
+//////////Methods
 
-///Unused:
+/////Used:
+
+/////Unused:
 
 //public static CounterBase.EncodingType[] values()
 //Returns an array containing the constants of this enum type, in the order they are declared.
@@ -104,16 +110,17 @@
 
 
 
-////////////////////Accelerometer////////////////////
+////////////////////////////////////////Accelerometer////////////////////////////////////////
 
-/////Import
+//////////Import
+
 //import edu.wpi.first.wpilibj.interfaces.Accelerometer;
 
-/////Constructor
+//////////Constructor
 
-/////Methods
+//////////Methods
 
-///Used:
+/////Used:
 
 //double getX()
 //Common interface for getting the x-axis acceleration.
@@ -123,7 +130,7 @@
 //Common interface for getting the y-axis acceleration.
 //Returns: The acceleration along the y-axis in g-forces
 
-///Unused:
+/////Unused:
 
 //void setRange​(Accelerometer.Range range)
 //Common interface for setting the measuring range of an accelerometer.
@@ -135,19 +142,21 @@
 
 
 
-////////////////////WPI_TalonSRX////////////////////
+////////////////////////////////////////WPI_TalonSRX////////////////////////////////////////
 
-/////Import
+//////////Import
+
 //import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 
-/////Constructor
+//////////Constructor
+
 //public WPI_TalonSRX(int deviceNumber)
 //Constructor for motor controller
 //deviceNumber - device ID of motor controller
 
-/////Methods
+//////////Methods
 
-///Used:
+/////Used:
 
 //public void set(double speed)	
 //Common interface for setting the speed of a simple speed controller.
@@ -158,7 +167,7 @@
 //isInverted - The state of inversion, true is inverted.
 
 
-///Unused:
+/////Unused:
 
 //public void close()
 
@@ -227,21 +236,23 @@
 
 
 
-////////////////////Analog Input////////////////////
+////////////////////////////////////////Analog Input////////////////////////////////////////
 
-/////Import
+//////////Import
+
 //import edu.wpi.first.wpilibj.AnalogInput;
 
-/////Constructor
+//////////Constructor
+
 //public AnalogInput​(int channel)
 //Construct an analog channel.
 //channel - The channel number to represent. 0-3 are on-board 4-7 are on the MXP port.
 
-/////Methods
+//////////Methods
 
-///Used:
+/////Used:
 
-///Unused:
+/////Unused:
 
 //public void close()
 //Specified by: close in interface AutoCloseable
@@ -301,24 +312,260 @@
 //This will be added to all values returned to the user.
 //initialValue - The value that the accumulator should start from when reset.
 
+//public void resetAccumulator()
+//Resets the accumulator to the initial value.
+
+//public void setAccumulatorCenter​(int center)
+//Set the center value of the accumulator.
+//The center value is subtracted from each A/D value before it is added to the accumulator. This is used for the center value of devices like gyros and accelerometers to take the device offset into account when integrating.
+//This center value is based on the output of the oversampled and averaged source the accumulator channel. Because of this, any non-zero oversample bits will affect the size of the value for this field.
+//center - The accumulator's center value.
+
+//public void setAccumulatorDeadband​(int deadband)
+//Set the accumulator's deadband.
+//deadband - The deadband size in ADC codes (12-bit value)
+
+//public long getAccumulatorValue()
+//Read the accumulated value.
+//Read the value that has been accumulating. The accumulator is attached after the oversample and average engine.
+//Returns: The 64-bit value accumulated since the last Reset().
+
+//public long getAccumulatorCount()
+//Read the number of accumulated values.
+//Read the count of the accumulated values since the accumulator was last Reset().
+//Returns: The number of times samples from the channel were accumulated.
+
+//public void getAccumulatorOutput​(AccumulatorResult result)
+//Read the accumulated value and the number of accumulated values atomically.
+//This function reads the value and count from the FPGA atomically. This can be used for averaging.
+//result - AccumulatorResult object to store the results in.
+
+//public boolean isAccumulatorChannel()
+//Is the channel attached to an accumulator.
+//Returns: The analog channel is attached to an accumulator.
+
+//public static void setGlobalSampleRate​(double samplesPerSecond)
+//Set the sample rate per channel.
+//This is a global setting for all channels. The maximum rate is 500kS/s divided by the number of channels in use. //This is 62500 samples/s per channel if all 8 channels are used.
+//samplesPerSecond - The number of samples per second.
+
+//public static double getGlobalSampleRate()
+//Get the current sample rate.
+//This assumes one entry in the scan list. This is a global setting for all channels.
+//Returns: Sample rate.
+
+//public void setSimDevice​(SimDevice device)
+//Indicates this input is used by a simulated device.
+//device - simulated device handle
+
+//public void initSendable​(SendableBuilder builder)
+//Initializes this Sendable object.
+//Specified by: initSendable in interface Sendable
+//builder - sendable builder
 
 
-////////////////////Joystick////////////////////
 
-/////Import
+////////////////////////////////////////Encoder////////////////////////////////////////
+
+//////////Import
+//import edu.wpi.first.wpilibj.Encoder;
+
+//////////Constructor
+
+//public Encoder​(int channelA, int channelB, boolean reverseDirection)
+//Encoder constructor. Construct a Encoder given a and b channels.
+//The encoder will start counting immediately.
+//channelA - The 'a' channel DIO channel. 0-9 are on-board, 10-25 are on the MXP port
+//channelB - The 'b' channel DIO channel. 0-9 are on-board, 10-25 are on the MXP port
+//reverseDirection - represents the orientation of the encoder and inverts the output values if necessary so forward represents positive values.
+
+//public Encoder​(int channelA, int channelB)
+//Encoder constructor. Construct an Encoder given a and b channels.
+//The encoder will start counting immediately.
+//channelA - The a channel digital input channel.
+//channelB - The b channel digital input channel.
+
+//public Encoder​(int channelA, int channelB, boolean reverseDirection, CounterBase.EncodingType encodingType)
+//Encoder constructor. Construct an Encoder given a and b channels.
+//The encoder will start counting immediately.
+//channelA - The a channel digital input channel.
+//channelB - The b channel digital input channel.
+//reverseDirection - represents the orientation of the encoder and inverts the output values if necessary so forward represents positive values.
+//encodingType - either k1X, k2X, or k4X to indicate 1X, 2X or 4X decoding. If 4X is selected, then an encoder FPGA object is used and the returned counts will be 4x the encoder spec'd value since all rising and falling edges are counted. If 1X or 2X are selected, then a counter object will be used and the returned value will either exactly match the spec'd count or be double (2x) the spec'd count.
+
+//public Encoder​(int channelA, int channelB, int indexChannel, boolean reverseDirection)
+//Encoder constructor. Construct an Encoder given a and b channels. Using an index pulse forces 4x encoding
+//The encoder will start counting immediately.
+//channelA - The a channel digital input channel.
+//channelB - The b channel digital input channel.
+//indexChannel - The index channel digital input channel.
+//reverseDirection - represents the orientation of the encoder and inverts the output values if necessary so forward represents positive values.
+
+//public Encoder​(int channelA, int channelB, int indexChannel)
+//Encoder constructor. Construct an Encoder given a and b channels. Using an index pulse forces 4x encoding
+//The encoder will start counting immediately.
+//channelA - The a channel digital input channel.
+//channelB - The b channel digital input channel.
+//indexChannel - The index channel digital input channel.
+
+//public Encoder​(DigitalSource sourceA, DigitalSource sourceB, boolean reverseDirection)
+//Encoder constructor. Construct an Encoder given a and b channels as digital inputs. This is used in the case where the digital inputs are shared. The Encoder class will not allocate the digital inputs and assume that they already are counted.
+//The encoder will start counting immediately.
+//sourceA - The source that should be used for the 'a' channel.
+//sourceB - the source that should be used for the 'b' channel.
+//reverseDirection - represents the orientation of the encoder and inverts the output values if necessary so forward //represents positive values.
+
+//public Encoder​(DigitalSource sourceA, DigitalSource sourceB)
+//Encoder constructor. Construct an Encoder given a and b channels as digital inputs. This is used in the case where the digital inputs are shared. The Encoder class will not allocate the digital inputs and assume that they already are counted.
+//The encoder will start counting immediately.
+//sourceA - The source that should be used for the 'a' channel.
+//sourceB - the source that should be used for the 'b' channel.
+
+//public Encoder​(DigitalSource sourceA, DigitalSource sourceB, boolean reverseDirection, CounterBase.EncodingType encodingType)
+//Encoder constructor. Construct an Encoder given a and b channels as digital inputs. This is used in the case where the digital inputs are shared. The Encoder class will not allocate the digital inputs and assume that they already are counted.
+//The encoder will start counting immediately.
+//sourceA - The source that should be used for the 'a' channel.
+//sourceB - the source that should be used for the 'b' channel.
+//reverseDirection - represents the orientation of the encoder and inverts the output values if necessary so forward represents positive values.
+//encodingType - either k1X, k2X, or k4X to indicate 1X, 2X or 4X decoding. If 4X is selected, then an encoder FPGA object is used and the returned counts will be 4x the encoder spec'd value since all rising and falling edges are counted. If 1X or 2X are selected then a counter object will be used and the returned value will either exactly match the spec'd count or be double (2x) the spec'd count.
+
+//public Encoder​(DigitalSource sourceA, DigitalSource sourceB, DigitalSource indexSource, boolean reverseDirection)
+//Encoder constructor. Construct an Encoder given a, b and index channels as digital inputs. This is used in the case where the digital inputs are shared. The Encoder class will not allocate the digital inputs and assume that they already are counted.
+//The encoder will start counting immediately.
+//sourceA - The source that should be used for the 'a' channel.
+//sourceB - the source that should be used for the 'b' channel.
+//indexSource - the source that should be used for the index channel.
+//reverseDirection - represents the orientation of the encoder and inverts the output values if necessary so forward represents positive values.
+
+//public Encoder​(DigitalSource sourceA, DigitalSource sourceB, DigitalSource indexSource)
+//Encoder constructor. Construct an Encoder given a, b and index channels as digital inputs. This is used in the case where the digital inputs are shared. The Encoder class will not allocate the digital inputs and assume that they already are counted.
+//The encoder will start counting immediately.
+//sourceA - The source that should be used for the 'a' channel.
+//sourceB - the source that should be used for the 'b' channel.
+//indexSource - the source that should be used for the index channel.
+
+//////////Methods
+
+/////Used:
+
+//public void reset()
+//Reset the Encoder distance to zero. Resets the current count to zero on the encoder.
+//Specified by: reset in interface CounterBase
+
+//public double getDistance()
+//Get the distance the robot has driven since the last reset as scaled by the value from setDistancePerPulse(double).
+//Returns: The distance driven since the last reset
+
+//public void setDistancePerPulse​(double distancePerPulse)
+//Set the distance per pulse for this encoder. This sets the multiplier used to determine the distance driven based on the count value from the encoder. Do not include the decoding type in this scale. The library already compensates for the decoding type. Set this value based on the encoder's rated Pulses per Revolution and factor in gearing reductions following the encoder shaft. This distance can be in any units you like, linear or angular.
+//distancePerPulse - The scale factor that will be used to convert pulses to useful units.
+
+/////Unused:
+
+//public int getFPGAIndex()
+//Get the FPGA index of the encoder.
+//Returns: The Encoder's FPGA index.
+
+//public int getEncodingScale()
+//Used to divide raw edge counts down to spec'd counts.
+//Returns: The encoding scale factor 1x, 2x, or 4x, per the requested encoding type.
+
+//public void close()
+//Specified by: close in interface AutoCloseable
+
+//public int getRaw()
+//Gets the raw value from the encoder. The raw value is the actual count unscaled by the 1x, 2x, or 4x scale factor.
+//Returns: Current raw count from the encoder
+
+//public int get()
+//Gets the current count. Returns the current count on the Encoder. This method compensates for the decoding type.
+//Specified by: get in interface CounterBase
+//Returns: Current count from the Encoder adjusted for the 1x, 2x, or 4x scale factor.
+
+//public boolean getStopped()
+//Determine if the encoder is stopped. Using the MaxPeriod value, a boolean is returned that is true if the encoder is considered stopped and false if it is still moving. A stopped encoder is one where the most recent pulse width exceeds the MaxPeriod.
+//Specified by: getStopped in interface CounterBase
+//Returns: True if the encoder is considered stopped.
+
+//public boolean getDirection()
+//The last direction the encoder value changed.
+//Specified by: getDirection in interface CounterBase
+//Returns: The last direction the encoder value changed.
+
+//public double getRate()
+//Get the current rate of the encoder. Units are distance per second as scaled by the value from setDistancePerPulse().
+//Returns: The current rate of the encoder.
+
+//public void setMinRate​(double minRate)
+//Set the minimum rate of the device before the hardware reports it stopped.
+//minRate - The minimum rate. The units are in distance per second as scaled by the value from setDistancePerPulse().
+
+//public double getDistancePerPulse()
+//Get the distance per pulse for this encoder.
+//Returns: The scale factor that will be used to convert pulses to useful units.
+
+//public void setReverseDirection​(boolean reverseDirection)
+//Set the direction sensing for this encoder. This sets the direction sensing on the encoder so that it could count in the correct software direction regardless of the mounting.
+//reverseDirection - true if the encoder direction should be reversed
+
+//public void setSamplesToAverage​(int samplesToAverage)
+//Set the Samples to Average which specifies the number of samples of the timer to average when calculating the period. Perform averaging to account for mechanical imperfections or as oversampling to increase resolution.
+//samplesToAverage - The number of samples to average from 1 to 127.
+
+//public int getSamplesToAverage()
+//Get the Samples to Average which specifies the number of samples of the timer to average when calculating the period. Perform averaging to account for mechanical imperfections or as oversampling to increase resolution.
+//Returns: SamplesToAverage The number of samples being averaged (from 1 to 127)
+
+//public void setIndexSource​(int channel)
+//Set the index source for the encoder. When this source is activated, the encoder count automatically resets.
+//channel - A DIO channel to set as the encoder index
+
+//public void setIndexSource​(DigitalSource source)
+//Set the index source for the encoder. When this source is activated, the encoder count automatically resets.
+//source - A digital source to set as the encoder index
+
+//public void setIndexSource​(int channel, Encoder.IndexingType type)
+//Set the index source for the encoder. When this source rises, the encoder count automatically resets.
+//channel - A DIO channel to set as the encoder index
+//type - The state that will cause the encoder to reset
+
+//public void setIndexSource​(DigitalSource source, Encoder.IndexingType type)
+//Set the index source for the encoder. When this source rises, the encoder count automatically resets.
+//source - A digital source to set as the encoder index
+//type - The state that will cause the encoder to reset
+
+//public void setSimDevice​(SimDevice device)
+//Indicates this input is used by a simulated device.
+//device - simulated device handle
+
+//public double getDecodingScaleFactor()
+//Gets the decoding scale factor for scaling raw values to full counts.
+//Returns: decoding scale factor
+
+//public void initSendable​(SendableBuilder builder)
+//Description copied from interface: Sendable
+//Initializes this Sendable object.
+//Specified by: initSendable in interface Sendable
+//builder - sendable builder
+
+
+
+////////////////////////////////////////Joystick////////////////////////////////////////
+
+//////////Import
 //import edu.wpi.first.wpilibj.Joystick;
 
-/////Constructor
+//////////Constructor
 //public Joystick​(int port)
 //Construct an instance of a joystick.
 //Parameters:
 //port - The port index on the Driver Station that the joystick is plugged into.
 
-/////Methods
+//////////Methods
 
-///Used:
+/////Used:
 
-///Unused:
+/////Unused:
 
 //public void setXChannel​(int channel)
 //Set the channel associated with the X axis.
@@ -425,6 +672,138 @@
 //public double getDirectionDegrees()
 //Get the direction of the vector formed by the joystick and its origin in degrees.
 //Returns: The direction of the vector in degrees
+
+
+
+////////////////////////////////////////PWM////////////////////////////////////////
+
+//////////Import
+
+//import edu.wpi.first.wpilibj.PWM;
+
+//////////Constructor
+
+//public PWM​(int channel)
+//Allocate a PWM given a channel.
+//Checks channel value range and allocates the appropriate channel. The allocation is only done to help users ensure that they don't double assign channels.
+//By default, adds itself to SendableRegistry and LiveWindow.
+//channel - The PWM channel number. 0-9 are on-board, 10-19 are on the MXP port
+
+//public PWM​(int channel, boolean registerSendable)
+//Allocate a PWM given a channel.
+//channel - The PWM channel number. 0-9 are on-board, 10-19 are on the MXP port
+//registerSendable - If true, adds this instance to SendableRegistry and LiveWindow
+
+//////////Methods
+
+/////Used:
+
+/////Unused:
+
+//public void close()
+//Free the resource associated with the PWM channel and set the value to 0.
+//Specified by: close in interface AutoCloseable
+
+//public void enableDeadbandElimination​(boolean eliminateDeadband)
+//Optionally eliminate the deadband from a motor controller.
+//eliminateDeadband - If true, set the motor curve for the motor controller to eliminate the deadband in the middle of the range. Otherwise, keep the full range without modifying any values.
+
+//public void setBounds​(double max, double deadbandMax, double center, double deadbandMin, double min)
+//Set the bounds on the PWM pulse widths. This sets the bounds on the PWM values for a particular type of controller. The values determine the upper and lower speeds as well as the deadband bracket.
+//max - The max PWM pulse width in ms
+//deadbandMax - The high end of the deadband range pulse width in ms
+//center - The center (off) pulse width in ms
+//deadbandMin - The low end of the deadband pulse width in ms
+//min - The minimum pulse width in ms
+
+//public PWMConfigDataResult getRawBounds()
+//Gets the bounds on the PWM pulse widths. This gets the bounds on the PWM values for a particular type of controller. The values determine the upper and lower speeds as well as the deadband bracket.
+//Returns: The bounds on the PWM pulse widths.
+
+//public int getChannel()
+//Gets the channel number associated with the PWM Object.
+//Returns: The channel number
+
+//public void setPosition​(double pos)
+//Set the PWM value based on a position.
+//This is intended to be used by servos.
+//pos - The position to set the servo between 0.0 and 1.0.
+//Pre-Condition: SetMaxPositivePwm() called., SetMinNegativePwm() called.
+
+//public double getPosition()
+//Get the PWM value in terms of a position.
+//This is intended to be used by servos.
+//Returns: The position the servo is set to between 0.0 and 1.0.
+//Pre-Condition: SetMaxPositivePwm() called., SetMinNegativePwm() called.
+
+//public void setSpeed​(double speed)
+//Set the PWM value based on a speed.
+//This is intended to be used by motor controllers.
+//speed - The speed to set the motor controller between -1.0 and 1.0.
+//Pre-Condition: SetMaxPositivePwm() called., SetMinPositivePwm() called., SetCenterPwm() called., SetMaxNegativePwm() called., SetMinNegativePwm() called.
+
+//public double getSpeed()
+//Get the PWM value in terms of speed.
+//This is intended to be used by motor controllers.
+//Returns: The most recently set speed between -1.0 and 1.0.
+//Pre-Condition: SetMaxPositivePwm() called., SetMinPositivePwm() called., SetMaxNegativePwm() called., SetMinNegativePwm() called.
+
+//public void setRaw​(int value)
+//Set the PWM value directly to the hardware.
+//Write a raw value to a PWM channel.
+//value - Raw PWM value. Range 0 - 255.
+
+//public int getRaw()
+//Get the PWM value directly from the hardware.
+//Read a raw value from a PWM channel.
+//Returns: Raw PWM control value. Range: 0 - 255.
+
+//public void setDisabled()
+//Temporarily disables the PWM output. The next set call will re-enable the output.
+
+//public void setPeriodMultiplier​(PWM.PeriodMultiplier mult)
+//Slow down the PWM signal for old devices.
+//mult - The period multiplier to apply to this channel
+
+//public void setZeroLatch()
+
+//public int getHandle()
+//Get the underlying handle.
+//Returns: Underlying PWM handle
+
+//public void initSendable​(SendableBuilder builder)
+//Description copied from interface: Sendable
+//Initializes this Sendable object.
+//Specified by: initSendable in interface Sendable
+//builder - sendable builder
+
+
+
+////////////////////////////////////////[TITLE]////////////////////////////////////////
+
+//////////Import
+
+//import edu.wpi.first.wpilibj.BuiltInAccelerometer;
+
+//////////Constructor
+
+//////////Methods
+
+/////Used:
+
+/////Unused:
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
