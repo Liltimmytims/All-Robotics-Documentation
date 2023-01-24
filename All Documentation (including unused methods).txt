@@ -6,7 +6,6 @@
 //////////TO DO
 
 //////////WORK IN PROGRESS
-//import edu.wpi.first.wpilibj.BuiltInAccelerometer;
 
 //////////DONE
 //import edu.wpi.first.wpilibj.TimedRobot;
@@ -17,6 +16,7 @@
 //import edu.wpi.first.wpilibj.Encoder;
 //import edu.wpi.first.wpilibj.Joystick;
 //import edu.wpi.first.wpilibj.PWM;
+//import edu.wpi.first.wpilibj.BuiltInAccelerometer;
 
 
 
@@ -779,7 +779,7 @@
 
 
 
-////////////////////////////////////////[TITLE]////////////////////////////////////////
+////////////////////////////////////////Built In Accelerometer////////////////////////////////////////
 
 //////////Import
 
@@ -787,11 +787,46 @@
 
 //////////Constructor
 
+//public BuiltInAccelerometer​(Accelerometer.Range range)
+//Constructor.
+//range - The range the accelerometer will measure
+
+//public BuiltInAccelerometer()
+//Constructor. The accelerometer will measure +/-8 g-forces
+
 //////////Methods
 
 /////Used:
 
+//public double getX()
+//The acceleration in the X axis.
+//Specified by: getX in interface Accelerometer
+//Returns: The acceleration of the roboRIO along the X axis in g-forces
+
+//public double getY()
+//The acceleration in the Y axis.
+//Specified by: getY in interface Accelerometer
+//Returns: The acceleration of the roboRIO along the Y axis in g-forces
+
 /////Unused:
+
+//public void close()
+//Specified by: close in interface AutoCloseable
+
+//public void setRange​(Accelerometer.Range range)
+//Common interface for setting the measuring range of an accelerometer.
+//Specified by: setRange in interface Accelerometer
+//range - The maximum acceleration, positive or negative, that the accelerometer will measure. Not all accelerometers support all ranges.
+
+//public double getZ()
+//The acceleration in the Z axis.
+//Specified by: getZ in interface Accelerometer
+//Returns: The acceleration of the roboRIO along the Z axis in g-forces
+
+//public void initSendable​(SendableBuilder builder)
+//Initializes this Sendable object.
+//Specified by: initSendable in interface Sendable
+//builder - sendable builder
 
 
 
