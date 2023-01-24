@@ -1,0 +1,303 @@
+////////////////////////////////////////[All Documentation]////////////////////////////////////////
+//Jimmy Souilliere
+//This copy does NOT include currently unused methods
+
+
+//////////TO DO
+
+//////////WORK IN PROGRESS
+
+//////////DONE
+//import edu.wpi.first.wpilibj.TimedRobot;
+//import edu.wpi.first.wpilibj.CounterBase.EncodingType;
+//import edu.wpi.first.wpilibj.interfaces.Accelerometer;
+//import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+//import edu.wpi.first.wpilibj.AnalogInput;
+//import edu.wpi.first.wpilibj.Encoder;
+//import edu.wpi.first.wpilibj.Joystick;
+//import edu.wpi.first.wpilibj.PWM;
+//import edu.wpi.first.wpilibj.BuiltInAccelerometer;
+
+
+
+////////////////////////////////////////[TITLE]////////////////////////////////////////
+
+//////////Import
+
+//////////Constructor
+
+//////////Methods
+
+/////Used:
+
+/////Unused:
+
+
+
+////////////////////////////////////////Timed Robot////////////////////////////////////////
+
+//////////Import
+
+//import edu.wpi.first.wpilibj.TimedRobot;
+
+//////////Constructor
+
+//protected TimedRobot()
+//Constructor for TimedRobot.
+
+//protected TimedRobot​(double period)
+//Constructor for TimedRobot.
+//period - Period in seconds.
+
+//////////Methods
+
+
+
+////////////////////////////////////////Encoding Type////////////////////////////////////////
+
+//////////Import
+
+//import edu.wpi.first.wpilibj.CounterBase.EncodingType;
+
+//////////Constructor
+
+//////////Methods
+
+
+
+////////////////////////////////////////Accelerometer////////////////////////////////////////
+
+//////////Import
+
+//import edu.wpi.first.wpilibj.interfaces.Accelerometer;
+
+//////////Constructor
+
+//////////Methods
+
+//double getX()
+//Common interface for getting the x-axis acceleration.
+//Returns: The acceleration along the x-axis in g-forces
+
+//double getY()
+//Common interface for getting the y-axis acceleration.
+//Returns: The acceleration along the y-axis in g-forces
+
+
+
+////////////////////////////////////////WPI_TalonSRX////////////////////////////////////////
+
+//////////Import
+
+//import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
+
+//////////Constructor
+
+//public WPI_TalonSRX(int deviceNumber)
+//Constructor for motor controller
+//deviceNumber - device ID of motor controller
+
+//////////Methods
+
+//public void set(double speed)	
+//Common interface for setting the speed of a simple speed controller.
+//speed - The speed to set. Value should be between -1.0 and 1.0. Value is also saved for Get().
+
+//public void setInverted(boolean isInverted)	
+//Common interface for inverting direction of a speed controller.
+//isInverted - The state of inversion, true is inverted.
+
+
+
+////////////////////////////////////////Analog Input////////////////////////////////////////
+
+//////////Import
+
+//import edu.wpi.first.wpilibj.AnalogInput;
+
+//////////Constructor
+
+//public AnalogInput​(int channel)
+//Construct an analog channel.
+//channel - The channel number to represent. 0-3 are on-board 4-7 are on the MXP port.
+
+//////////Methods
+
+
+
+////////////////////////////////////////Encoder////////////////////////////////////////
+
+//////////Import
+//import edu.wpi.first.wpilibj.Encoder;
+
+//////////Constructor
+
+//public Encoder​(int channelA, int channelB, boolean reverseDirection)
+//Encoder constructor. Construct a Encoder given a and b channels.
+//The encoder will start counting immediately.
+//channelA - The 'a' channel DIO channel. 0-9 are on-board, 10-25 are on the MXP port
+//channelB - The 'b' channel DIO channel. 0-9 are on-board, 10-25 are on the MXP port
+//reverseDirection - represents the orientation of the encoder and inverts the output values if necessary so forward represents positive values.
+
+//public Encoder​(int channelA, int channelB)
+//Encoder constructor. Construct an Encoder given a and b channels.
+//The encoder will start counting immediately.
+//channelA - The a channel digital input channel.
+//channelB - The b channel digital input channel.
+
+//public Encoder​(int channelA, int channelB, boolean reverseDirection, CounterBase.EncodingType encodingType)
+//Encoder constructor. Construct an Encoder given a and b channels.
+//The encoder will start counting immediately.
+//channelA - The a channel digital input channel.
+//channelB - The b channel digital input channel.
+//reverseDirection - represents the orientation of the encoder and inverts the output values if necessary so forward represents positive values.
+//encodingType - either k1X, k2X, or k4X to indicate 1X, 2X or 4X decoding. If 4X is selected, then an encoder FPGA object is used and the returned counts will be 4x the encoder spec'd value since all rising and falling edges are counted. If 1X or 2X are selected, then a counter object will be used and the returned value will either exactly match the spec'd count or be double (2x) the spec'd count.
+
+//public Encoder​(int channelA, int channelB, int indexChannel, boolean reverseDirection)
+//Encoder constructor. Construct an Encoder given a and b channels. Using an index pulse forces 4x encoding
+//The encoder will start counting immediately.
+//channelA - The a channel digital input channel.
+//channelB - The b channel digital input channel.
+//indexChannel - The index channel digital input channel.
+//reverseDirection - represents the orientation of the encoder and inverts the output values if necessary so forward represents positive values.
+
+//public Encoder​(int channelA, int channelB, int indexChannel)
+//Encoder constructor. Construct an Encoder given a and b channels. Using an index pulse forces 4x encoding
+//The encoder will start counting immediately.
+//channelA - The a channel digital input channel.
+//channelB - The b channel digital input channel.
+//indexChannel - The index channel digital input channel.
+
+//public Encoder​(DigitalSource sourceA, DigitalSource sourceB, boolean reverseDirection)
+//Encoder constructor. Construct an Encoder given a and b channels as digital inputs. This is used in the case where the digital inputs are shared. The Encoder class will not allocate the digital inputs and assume that they already are counted.
+//The encoder will start counting immediately.
+//sourceA - The source that should be used for the 'a' channel.
+//sourceB - the source that should be used for the 'b' channel.
+//reverseDirection - represents the orientation of the encoder and inverts the output values if necessary so forward //represents positive values.
+
+//public Encoder​(DigitalSource sourceA, DigitalSource sourceB)
+//Encoder constructor. Construct an Encoder given a and b channels as digital inputs. This is used in the case where the digital inputs are shared. The Encoder class will not allocate the digital inputs and assume that they already are counted.
+//The encoder will start counting immediately.
+//sourceA - The source that should be used for the 'a' channel.
+//sourceB - the source that should be used for the 'b' channel.
+
+//public Encoder​(DigitalSource sourceA, DigitalSource sourceB, boolean reverseDirection, CounterBase.EncodingType encodingType)
+//Encoder constructor. Construct an Encoder given a and b channels as digital inputs. This is used in the case where the digital inputs are shared. The Encoder class will not allocate the digital inputs and assume that they already are counted.
+//The encoder will start counting immediately.
+//sourceA - The source that should be used for the 'a' channel.
+//sourceB - the source that should be used for the 'b' channel.
+//reverseDirection - represents the orientation of the encoder and inverts the output values if necessary so forward represents positive values.
+//encodingType - either k1X, k2X, or k4X to indicate 1X, 2X or 4X decoding. If 4X is selected, then an encoder FPGA object is used and the returned counts will be 4x the encoder spec'd value since all rising and falling edges are counted. If 1X or 2X are selected then a counter object will be used and the returned value will either exactly match the spec'd count or be double (2x) the spec'd count.
+
+//public Encoder​(DigitalSource sourceA, DigitalSource sourceB, DigitalSource indexSource, boolean reverseDirection)
+//Encoder constructor. Construct an Encoder given a, b and index channels as digital inputs. This is used in the case where the digital inputs are shared. The Encoder class will not allocate the digital inputs and assume that they already are counted.
+//The encoder will start counting immediately.
+//sourceA - The source that should be used for the 'a' channel.
+//sourceB - the source that should be used for the 'b' channel.
+//indexSource - the source that should be used for the index channel.
+//reverseDirection - represents the orientation of the encoder and inverts the output values if necessary so forward represents positive values.
+
+//public Encoder​(DigitalSource sourceA, DigitalSource sourceB, DigitalSource indexSource)
+//Encoder constructor. Construct an Encoder given a, b and index channels as digital inputs. This is used in the case where the digital inputs are shared. The Encoder class will not allocate the digital inputs and assume that they already are counted.
+//The encoder will start counting immediately.
+//sourceA - The source that should be used for the 'a' channel.
+//sourceB - the source that should be used for the 'b' channel.
+//indexSource - the source that should be used for the index channel.
+
+//////////Methods
+
+//public void reset()
+//Reset the Encoder distance to zero. Resets the current count to zero on the encoder.
+//Specified by: reset in interface CounterBase
+
+//public double getDistance()
+//Get the distance the robot has driven since the last reset as scaled by the value from setDistancePerPulse(double).
+//Returns: The distance driven since the last reset
+
+//public void setDistancePerPulse​(double distancePerPulse)
+//Set the distance per pulse for this encoder. This sets the multiplier used to determine the distance driven based on the count value from the encoder. Do not include the decoding type in this scale. The library already compensates for the decoding type. Set this value based on the encoder's rated Pulses per Revolution and factor in gearing reductions following the encoder shaft. This distance can be in any units you like, linear or angular.
+//distancePerPulse - The scale factor that will be used to convert pulses to useful units.
+
+
+
+////////////////////////////////////////Joystick////////////////////////////////////////
+
+//////////Import
+//import edu.wpi.first.wpilibj.Joystick;
+
+//////////Constructor
+//public Joystick​(int port)
+//Construct an instance of a joystick.
+//Parameters:
+//port - The port index on the Driver Station that the joystick is plugged into.
+
+//////////Methods
+
+
+
+////////////////////////////////////////PWM////////////////////////////////////////
+
+//////////Import
+
+//import edu.wpi.first.wpilibj.PWM;
+
+//////////Constructor
+
+//public PWM​(int channel)
+//Allocate a PWM given a channel.
+//Checks channel value range and allocates the appropriate channel. The allocation is only done to help users ensure that they don't double assign channels.
+//By default, adds itself to SendableRegistry and LiveWindow.
+//channel - The PWM channel number. 0-9 are on-board, 10-19 are on the MXP port
+
+//public PWM​(int channel, boolean registerSendable)
+//Allocate a PWM given a channel.
+//channel - The PWM channel number. 0-9 are on-board, 10-19 are on the MXP port
+//registerSendable - If true, adds this instance to SendableRegistry and LiveWindow
+
+//////////Methods
+
+
+
+////////////////////////////////////////Built In Accelerometer////////////////////////////////////////
+
+//////////Import
+
+//import edu.wpi.first.wpilibj.BuiltInAccelerometer;
+
+//////////Constructor
+
+//public BuiltInAccelerometer​(Accelerometer.Range range)
+//Constructor.
+//range - The range the accelerometer will measure
+
+//public BuiltInAccelerometer()
+//Constructor. The accelerometer will measure +/-8 g-forces
+
+//////////Methods
+
+//public double getX()
+//The acceleration in the X axis.
+//Specified by: getX in interface Accelerometer
+//Returns: The acceleration of the roboRIO along the X axis in g-forces
+
+//public double getY()
+//The acceleration in the Y axis.
+//Specified by: getY in interface Accelerometer
+//Returns: The acceleration of the roboRIO along the Y axis in g-forces
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
