@@ -1,4 +1,4 @@
-﻿//All Documentation (including unused methods)
+//All Documentation (including unused methods)
 
 
 /////TO DO
@@ -262,6 +262,44 @@
 //Get a scaled sample from the output of the oversample and average engine for this channel. The value is scaled to units of Volts using the calibrated scaling data from getLSBWeight() and getOffset(). Using oversampling will cause this value to be higher resolution, but it will update more slowly. Using averaging will cause this value to be more stable, but it will update more slowly.
 //Returns:
 //A scaled sample from the output of the oversample and average engine for this channel.
+
+//public long getLSBWeight()
+//Get the factory scaling the least significant bit weight constant. The least significant bit weight constant for the channel that was calibrated in manufacturing and stored in an eeprom.
+//Volts = ((LSB_Weight * 1e-9) * raw) - (Offset * 1e-9)
+//Returns: Least significant bit weight.
+
+//public int getOffset()
+//Get the factory scaling offset constant. The offset constant for the channel that was calibrated in manufacturing and stored in an eeprom.
+//Volts = ((LSB_Weight * 1e-9) * raw) - (Offset * 1e-9)
+//Returns: Offset constant.
+
+//public int getChannel()
+//Get the channel number.
+//Returns: The channel number.
+
+//public void setAverageBits​(int bits)
+//Set the number of averaging bits. This sets the number of averaging bits. The actual number of averaged samples is 2^bits. The averaging is done automatically in the FPGA.
+//bits - The number of averaging bits.
+
+//public int getAverageBits()
+//Get the number of averaging bits. This gets the number of averaging bits from the FPGA. The actual number of averaged samples is 2^bits. The averaging is done automatically in the FPGA.
+//Returns: The number of averaging bits.
+
+//public void setOversampleBits​(int bits)
+//Set the number of oversample bits. This sets the number of oversample bits. The actual number of oversampled values is 2^bits. The oversampling is done automatically in the FPGA.
+//bits - The number of oversample bits.
+
+//public int getOversampleBits()
+//Get the number of oversample bits. This gets the number of oversample bits from the FPGA. The actual number of oversampled values is 2^bits. The oversampling is done automatically in the FPGA.
+//Returns: The number of oversample bits.
+
+//public void initAccumulator()
+//Initialize the accumulator.
+
+//public void setAccumulatorInitialValue​(long initialValue)
+//Set an initial value for the accumulator.
+//This will be added to all values returned to the user.
+//initialValue - The value that the accumulator should start from when reset.
 
 
 
